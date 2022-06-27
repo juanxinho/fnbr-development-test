@@ -1,0 +1,22 @@
+{
+    "name": "ct-candidates/evaluation",
+    "description": "A test app to evaluate your skills",
+    "keywords": [],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+    },
+    "autoload-dev": {
+    },
+    "scripts": {
+    },
+    "config": {
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
