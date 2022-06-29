@@ -40,9 +40,10 @@ Hello there candidate! welcome to the development test for the position of junio
 - Programs dropdown is dependent on Areas dropdown.
 - The form must send an e-mail to the person requesting information.  
   - The sending of this mail can be spoofed through services such as mailtrap or mailhub.
-- The information must be stored in a non-relational database (Optional).   
+- The information must be stored in a database.   
+  - You can use a non-relational database (optional).
 - Possible technologies to be used for front-end development: React, Vue, Angular, Javascript.
-- The backend development language is at your discretion. The provided is php8
+- The backend development language is at your discretion. The provided is php8.
 
 > The entire project will be checked out with Docker compose and must work with the provided dependencies by sending a pull request to this repository.   
 > Any environment variables in addition to those provided must be sent in the pull request with an explanation.     
