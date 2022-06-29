@@ -1,5 +1,6 @@
-# Development test: contact form and mail sending
-### We require the development of a web form with the following characteristics:
+# Development test
+
+Hello there candidate! welcome to the development test for the position of junior web developer for CT Funiber Ecuador. We present you a simple challenge of a web form development that will receive some data detailed below, store it and send it by mail.
 
 #### Fields:
 
@@ -31,10 +32,20 @@
       - Master's Degree in Design, Management and Project Management with specialization in Innovation and Products
       - Master's Degree in Design, Management and Project Management with a specialization in Architecture and Urban Planning
 
->- All fields except comments are mandatory and must be correctly validated.   
->- The form must send an e-mail to the person requesting information.  
->- The information must be stored in a non-relational database (Optional).   
->- Possible technologies to be used for front-end development: React, Vue, Angular, Javascript.    
->- The solution should be sent as a pull request from this base project in docker.
+- All fields, except comments, are mandatory and must be properly validated. 
+- For country, province and city dropdowns, open source alternatives can be used, such as:
+  - https://github.com/dr5hn/countries-states-cities-database
+  - https://github.com/hiiamrohit/Countries-States-Cities-database
+  - it should be noted that in this case, the functionality of each dropdown is dependent on the previous one: country > province > city.
+- Programs dropdown is dependent on Areas dropdown.
+- The form must send an e-mail to the person requesting information.  
+  - The sending of this mail can be spoofed through services such as mailtrap or mailhub.
+- The information must be stored in a non-relational database (Optional).   
+- Possible technologies to be used for front-end development: React, Vue, Angular, Javascript.
+- The backend development language is at your discretion. The provided is php8
 
-[Form example](https://www.figma.com/proto/RNZItqYIpXh45obZCd6Hnt/Propuesta?node-id=149%3A2&scaling=min-zoom&page-id=0%3A1&hotspot-hints=0&hide-ui=1)
+> The entire project will be checked out with Docker compose and must work with the provided dependencies by sending a pull request to this repository.   
+> Any environment variables in addition to those provided must be sent in the pull request with an explanation.     
+> If there are any doubts, read the requirements in the docker-compose file.  
+> For this challenge you have a development time of 72 hours from the reception of the mail.  
+> You can check a [form example here](https://www.figma.com/proto/RNZItqYIpXh45obZCd6Hnt/Propuesta?node-id=149%3A2&scaling=min-zoom&page-id=0%3A1&hotspot-hints=0&hide-ui=1)
