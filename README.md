@@ -1,52 +1,81 @@
-# Development test
+# Prueba Developer Funiber
 
-Hello there candidate! welcome to the development test for the position of junior web developer for CT Funiber Ecuador. We present you a simple challenge of a web form development that will receive some data detailed below, store it and send it by mail.
+Buenas, mi nombre es Emanuel Titob Santamaría Tigua.
+fyi.
 
-#### Fields:
+## _Desarrollado con_
 
-1. Name    
-2. Last name   
-3. Email   
-4. Phone   
-5. Country
-6. State
-7. City    
-8. Comments    
-9. Policy Acceptance Check   
-10. Areas and Programs:
-    - Department of Environment and Sustainability
-      - Master's Degree in Environmental Management and Audits
-    - Department of Innovation, Business and New Technologies
-      - Master's Degree in Strategic Management with a Specialization in Management
-      - Master's Degree in Strategic Management with a Specialization in Information Technologies
-      - Master's Degree in Strategic Management with a specialization in Telecommunications
-    - Department of Language, Education and Communications Sciences
-      - Master's Degree in Training of Teachers of Spanish as a Foreign Language
-      - Master's Degree in Education with a specialization in Higher Education
-      - Master's Degree in Education with a specialization in Organization and Management of Educational Centers
-    - Department of Health Sciences
-      - Master's Degree in Physical Activity: Training and Sports Management
-      - Master's Degree in Naturopathic Sciences
-    - Department of Projects
-      - Master's Degree in Project Design, Management and Direction
-      - Master's Degree in Design, Management and Project Management with specialization in Innovation and Products
-      - Master's Degree in Design, Management and Project Management with a specialization in Architecture and Urban Planning
+- Laravel
+- Vue js
+- MySql
 
-- All fields, except comments, are mandatory and must be properly validated. 
-- For country, province and city dropdowns, open source alternatives can be used, such as:
-  - https://github.com/dr5hn/countries-states-cities-database
-  - https://github.com/hiiamrohit/Countries-States-Cities-database
-  - it should be noted that in this case, the functionality of each dropdown is dependent on the previous one: country > province > city.
-- Programs dropdown is dependent on Areas dropdown.
-- The form must send an e-mail to the person requesting information.  
-  - The sending of this mail can be spoofed through services such as mailtrap or mailhub.
-- The information must be stored in a database.   
-  - You can use a non-relational database (optional).
-- Possible technologies to be used for front-end development: React, Vue, Angular, Javascript.
-- The backend development language is at your discretion. The provided is php8.
+## Requerimientos
 
-> The entire project will be checked out with Docker compose and must work with the provided dependencies by sending a pull request to this repository.   
-> Any environment variables in addition to those provided must be sent in the pull request with an explanation.     
-> If there are any doubts, read the requirements in the docker-compose file.  
-> For this challenge you have a development time of 72 hours from the reception of the mail.  
-> You can check a [form example here](https://www.figma.com/proto/RNZItqYIpXh45obZCd6Hnt/Propuesta?node-id=149%3A2&scaling=min-zoom&page-id=0%3A1&hotspot-hints=0&hide-ui=1)
+- Visual Studio Code
+- Docker Desktop (Docker y Docker Composer)
+- Git (Manejo de versiones)
+
+## Contenedores
+- Contenedor de la aplicación para correr comando composer y npm
+- Contenedor de Base de Datos (MySql, versión 5.6.51)
+- Contenedor de PhpMyAdmin
+
+Para habilitar los contenedores se deben ejecutar los siguientes pasos:
+
+-  Ejecutar el siguiente comando para descargar imágenes e iniciar los contenedores:
+  ```sh
+docker-compose up -d
+```
+-  Se debe validar el inicio de los contenedores, por favor ejecutar el siguiente comando:
+  ```sh
+ docker ps
+```
+-  Ejecutar el siguiente comando para dar de baja los contenedores:
+  ```sh
+docker-compose down
+```
+## Instalación
+En el DockerFile se encuentran instaladas las versiones para node y php: 
+- Node 14 
+- Php 7.4
+
+Una vez instalados los programas procedemos a:
+- Instalar las dependencias de laravel
+```sh
+docker-compose exec app composer install
+```
+- Correr las migraciones y seeders
+```sh
+docker-compose exec app php artisan migrate --seed
+```
+- Instalar las dependencias de Vue Js
+```sh
+docker-compose exec app npm install
+``` 
+- Compilar los archivos js y css
+```sh
+docker-compose exec app npm run dev
+``` 
+## Ambientes de Docker
+Este archivo de composición contiene las siguientes variables de entorno:
+- DB_CONNECTION el valor por defecto es mysql
+- DB_HOST el valor por defecto es mysql
+- DB_PORT el valor por defecto es 3306
+- DB_DATABASE el valor por defecto es funiber_db
+- DB_USERNAME el valor por defecto es funiber
+- DB_PASSWORD el valor por defecto es secret
+
+## Acceder a PhpMyAdmin
+- URL: http://localhost:82
+- MYSQL_ROOT_UER el valor por defecto es root
+- MYSQL_ROOT_PASSWORD el valor por defecto es root
+
+## Acceder a la aplicación 
+- URL: http://localhost:81
+
+## Envio de correo y colas
+Para el envio del correo y la optimización del envio se han utilizados las colas y jobs de laravel, además, para probar el envio de los correos se ha usado mailtrap. 
+Para ejecutar las colas se ejecuta el siguiente comando: 
+```sh
+docker-compose exec app php artisan queue:listen
+```
