@@ -3,7 +3,7 @@ import { FuniberProgramForms } from '../components/FuniberProgramsForm/FuniberPr
 import { Footer } from '../components/Footer/Footer';
 import { Navbar } from '../components/Navbar/Navbar';
 
-export default function Auth() {
+export default function RegisterForm() {
   return (
     <>
       <Navbar />

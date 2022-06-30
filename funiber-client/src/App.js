@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Auth from './pages/Auth';
+
+import RegisterForm from './pages/RegisterForm';
 
 function App() {
   return (
     <div>
-      <Auth />
+      <RegisterForm />
     </div>
   );
 }
