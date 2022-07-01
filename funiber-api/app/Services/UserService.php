@@ -19,7 +19,7 @@ class UserService
     public function registerUserInfo(array $data)
     {
 
-        echo response()->json($data);
+      
         $userData = [
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
