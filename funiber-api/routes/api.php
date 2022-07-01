@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\AreaController;
+use App\Http\Controllers\API\ProgramController;
 use App\Http\Controllers\API\ProgramInformationController;
 
 use Illuminate\Http\Request;
@@ -21,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('register' , [ProgramInformationController::class, 'register']);
+
+Route::get('areas', [AreaController::class, 'getAreas']);
+
+Route::get('programs/{areaId}', [ProgramController::class, 'getProgramsByAreaId']);
