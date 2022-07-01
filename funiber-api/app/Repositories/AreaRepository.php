@@ -13,7 +13,7 @@ class AreaRepository implements AreaRepositoryContract
    
     public function getAreas()
     {
-        // get only id and name from the area table
+  
         $areas = Area::select('id', 'name')->get();
 
         return $areas;

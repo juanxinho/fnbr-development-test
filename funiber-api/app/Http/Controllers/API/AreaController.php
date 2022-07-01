@@ -42,7 +42,7 @@ class AreaController extends Controller
             $areas = $this->areaService->getAreas();
     
            if($areas) {
-               return $this->responseHelper->successResponse(true, 'Areas available', $areas);
+               return response()->json(['status' => true, 'message' => 'Areas available', 'data' => $areas]);
            }
 
               return $this->responseHelper->errorResponse(false, 'Areas not found', 404);   

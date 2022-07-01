@@ -3,10 +3,23 @@ import csc from 'country-state-city';
 import Select from 'react-select';
 
 import { useFormik } from 'formik';
+import { useFetchAreas } from '../../hooks/useFetchAreas';
+import { useFetchProgramsById } from '../../hooks/useFetchProgramsById';
 
 export const FuniberProgramForms = () => {
+  const [areaId, setAreaId] = React.useState();
+  const { data: areas, loading: loadingAreas } = useFetchAreas();
+  const { data: programs, loading: loadingPrograms } =
+    useFetchProgramsById(areaId);
+
   const addressFromik = useFormik({
     initialValues: {
+      area: null,
+      program: null,
+      first_name: '',
+      last_name: '',
+      email: '',
+      phone: '',
       country: 'India',
       state: null,
       city: null,
@@ -30,10 +43,22 @@ export const FuniberProgramForms = () => {
       .getCitiesOfState(countryCode, stateId)
       .map((city) => ({ label: city.name, value: city.stateCode, ...city }));
 
+  const updateArea = areas.map((area) => ({
+    label: area.name,
+    value: area.id,
+    ...area,
+  }));
+
+  const updateProgram = programs.map((program) => ({
+    label: program.name,
+    value: program.area_id,
+    ...program,
+  }));
+
   const { values, handleSubmit, setFieldValue, setValues } = addressFromik;
 
   useEffect(() => {
-    console.log({ values });
+    if (values.area) setAreaId(values.area?.id);
   }, [values]);
 
   return (
@@ -58,15 +83,17 @@ export const FuniberProgramForms = () => {
                     >
                       Knowledge Areas
                     </label>
-                    <select
-                      id="country"
-                      name="country"
-                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    >
-                      <option>United States</option>
-                      <option>Canada</option>
-                      <option>Mexico</option>
-                    </select>
+                    <Select
+                      id="area"
+                      name="area"
+                      label="area"
+                      options={updateArea}
+                      value={values.area}
+                      onChange={(value) => {
+                        setValues({ ...values, area: value });
+                      }}
+                      className="mt-1 block w-full py-2 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
                   </div>
 
                   <div className="col-span-6 sm:col-span-3">
@@ -76,15 +103,18 @@ export const FuniberProgramForms = () => {
                     >
                       Program
                     </label>
-                    <select
-                      id="country"
-                      name="country"
-                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    >
-                      <option>United States</option>
-                      <option>Canada</option>
-                      <option>Mexico</option>
-                    </select>
+
+                    <Select
+                      id="program"
+                      name="program"
+                      label="program"
+                      options={updateProgram}
+                      value={values.program}
+                      onChange={(value) => {
+                        setValues({ ...values, program: value });
+                      }}
+                      className="mt-1 block w-full py-2 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    />
                   </div>
 
                   <div className="col-span-6 sm:col-span-3">
@@ -111,8 +141,8 @@ export const FuniberProgramForms = () => {
                     </label>
                     <input
                       type="text"
-                      name="first_name"
-                      id="first_name"
+                      name="last_name"
+                      id="last_name"
                       className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>

@@ -42,7 +42,7 @@ class ProgramController extends Controller
         $programs = $this->programService->getProgramsByAreaId($areaId);
 
         if ($programs) {
-            return $this->responseHelper->successResponse(true, 'Programs available', $programs);
+            return response()->json(['status' => true, 'message' => 'Areas available', 'data' => $programs]);
         }
 
         return $this->responseHelper->errorResponse(false, 'Programs not found', 404);
