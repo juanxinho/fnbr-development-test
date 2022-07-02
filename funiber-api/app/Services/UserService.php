@@ -24,6 +24,9 @@ class UserService
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
+            'country' => $data['country'],
+            'message' => $data['message'],
             'area_id' => $data['area_id'],
         ];
 

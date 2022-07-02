@@ -12,7 +12,7 @@ class AccessProgramMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $user;
+    public $user;
 
 
     /**
@@ -33,12 +33,8 @@ class AccessProgramMailable extends Mailable
      */
     public function build()
     {
-        
-        $url = url('api/access_program/' . $this->token);
-        return $this->from('wazza@youtube.com')->view('mail.register_user')->with([
-            'name' => $this->user->name,
-            'url' => $url
-        ]);
-        
+
+        return $this->subject( 'Access Program Funiber')->view('emails.info-email', ['user' => $this->user]);
+         
     }
 }

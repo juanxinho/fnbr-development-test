@@ -45,8 +45,6 @@ class ProgramInformationController extends Controller
     {
         $user = $this->userService->registerUserInfo($request->all());
 
-      
-        echo $request;
         if ($user) {
            
             Mail::to($user->email)->send(new AccessProgramMailable($user));

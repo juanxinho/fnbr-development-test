@@ -23,6 +23,7 @@ export const FuniberProgramForms = () => {
       country: 'India',
       state: null,
       city: null,
+      message: '',
     },
     onSubmit: (values) => console.log(values),
   });
@@ -128,6 +129,8 @@ export const FuniberProgramForms = () => {
                       type="text"
                       name="first_name"
                       id="first_name"
+                      value={values.first_name}
+                      onChange={(e) => setValues('first_name', e.target.value)}
                       className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -143,6 +146,10 @@ export const FuniberProgramForms = () => {
                       type="text"
                       name="last_name"
                       id="last_name"
+                      value={values.last_name}
+                      onChange={(e) => {
+                        setValues({ ...values, last_name: e.target.value });
+                      }}
                       className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -157,6 +164,10 @@ export const FuniberProgramForms = () => {
                       type="email"
                       name="email"
                       id="email"
+                      value={values.email}
+                      onChange={(e) => {
+                        setValues({ ...values, email: e.target.value });
+                      }}
                       className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -172,6 +183,10 @@ export const FuniberProgramForms = () => {
                       type="number"
                       name="phone"
                       id="phone"
+                      value={values.phone}
+                      onChange={(e) => {
+                        setValues({ ...values, phone: e.target.value });
+                      }}
                       className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     />
                   </div>
@@ -247,6 +262,7 @@ export const FuniberProgramForms = () => {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       rows="4"
                       className="block p-2.5 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500    dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Your message..."
