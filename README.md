@@ -1,4 +1,4 @@
-# Prueba Developer Funiber
+# Prueba Developer Polimundo
 
 Buenas, mi nombre es Emanuel Titob Santamaría Tigua.
 fyi.
