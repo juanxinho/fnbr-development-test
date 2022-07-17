@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"/>
+</head>
+<body>
+    <header>
+        <div class="row-azul"></div>
+        <div class="container">
+            <a href="https://www.funiber.org.ec/">
+                <img src="https://www.funiber.org.ec/themes/funiber/logos/es-ec.svg" alt="funiber"/>
+            </a>
+        </div>
+    </header>
+    <main class="container">
+
+        <h1>Request Information</h1>
+        <form action="" class="form">
+
+            <div class="container-inputs">
+                <div class="column-50">
+                    <label for="selArea">Knowledge Areas</label>
+                    <select 
+                        name="selArea" 
+                        id="selectArea"
+                        title="Select an option"
+                        required>
+                        
+                    </select>
+                </div>
+                
+                <div class="column-50">
+                    <label for="selProgram">Programs</label>
+                    <select 
+                        name="selProgram" 
+                        id="selectProgram"
+                        title="Select an option" 
+                        required 
+                        disabled>
+                        
+                    </select>
+                </div>
+                
+                <div class="column-50">
+                    <label for="selProgram">Names</label>
+                    <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Names" 
+                    title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" 
+                    required>
+                </div>
+    
+                <div class="column-50">
+                    <label for="selProgram">Last Names</label>
+                    <input 
+                    type="text" 
+                    name="lastName" 
+                    placeholder="Last Names"
+                    title="Nombre solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" 
+                    required>
+                </div>
+    
+                <div class="column-50">
+                    <label for="selProgram">E-mail</label>
+                    <input 
+                    type="email"
+                    name="email"
+                    placeholder="E-mail"
+                    pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+                    title="Email incorrecto"
+                    required>
+                </div>
+    
+                <div class="column-50">
+                    <label for="selProgram">Phone</label>
+                    <input 
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone"
+                    pattern= "^[0-9]{1,10}$"
+                    title="telefono incorrecto"
+                    required>
+                </div>
+        
+                <div class="column-50">
+                    <label for="selCountry">Country</label>
+                    <select 
+                        name="selCountry" 
+                        id="selectCountry"
+                        title="Select an option"
+                        required>
+                        
+                    </select>
+                </div>
+                
+                <div class="column-50">
+                    <label for="selState">State</label>
+                    <select 
+                        name="selState" 
+                        id="selectState" 
+                        title="Select an option"
+                        disabled 
+                        required>
+                        
+                    </select>
+                </div>
+                
+                <div class="column-50">
+                    <label for="selCity">City</label>
+                    <select 
+                        name="selCity" 
+                        id="selectCity" 
+                        title="Select an option"
+                        disabled 
+                        required>
+                    </select>
+                </div>
+    
+                <div class="column-50">
+                    <label for="selCity">Comment</label>
+                    <textarea name="comment" id="" placeholder="Comment"></textarea>
+                </div> 
+
+                <div class="column-50">
+                    <input type="checkbox" required>
+                    <label for="selCity" >I accept the privacy policy</label>
+                </div>
+            </div>
+            
+
+            <button type="submit" class="form_btn">Enviar<i class="fa fa-paper-plane"></i></button>
+        </form>
+
+        <div class="form-loader none">
+            <img src="https://samherbert.net/svg-loaders/svg-loaders/ball-triangle.svg" alt="Cargando">
+        </div>
+        <div class="form-response none">
+            <div class="card-response">
+                <i class="fa fa-envelope"></i>
+                <div class="name-user"></div>
+                <p> tus datos fueron enviados exitosamente!</p>
+            </div>
+        </div>
+    </main>
+    
+    
+    <script src="index.js" type="module"></script>
+</body>
+</html>
