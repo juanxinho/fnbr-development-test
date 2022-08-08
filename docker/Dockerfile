@@ -8,9 +8,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
 WORKDIR /app
 COPY . .
 
-RUN chmod -R 777 storage \
-    /app/storage \
-
 #expose the ports
 EXPOSE 80
 EXPOSE 443
