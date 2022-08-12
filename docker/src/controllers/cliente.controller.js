@@ -16,22 +16,27 @@ const getClientes = async (req, res) => {
 
 const addCliente = async (req, res) => {
     try {
-        console.log(req.body);
+        // console.log(req.body);
         const { area,program, names,lastNames:last_names, email,phone,country,state,city,comment } = req.body;
 
-        // if (name === undefined || programmers === undefined) {
-        //     res.status(400).json({ message: "Bad Request. Please fill all field." });
-        // }
 
         const datos = { area,program, names,last_names, email,phone,country,state,city,comment };
-        console.log(datos);
+        // console.log(datos);
         const connection = await getConnection();
         await connection.query("INSERT INTO cliente SET ?", datos);
         mailer.sendMail(email);
-        res.json({ message: "Cliente register", }).status(200);
+        res.json({
+            status:'200',
+            message:'medio Guardado',
+            error:false
+        }).status(200);
     } catch (error) {
         res.status(500);
-        res.send(error.message);
+        res.res.json({
+            status:'500',
+            message:error.message,
+            error:true
+        });
     }
 };
 
