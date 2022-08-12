@@ -16,7 +16,8 @@ const getClientes = async (req, res) => {
 
 const addCliente = async (req, res) => {
     try {
-        const { area,program, names,last_names, email,phone,country,state,city,comment } = req.body;
+        console.log(req.body);
+        const { area,program, names,lastNames:last_names, email,phone,country,state,city,comment } = req.body;
 
         // if (name === undefined || programmers === undefined) {
         //     res.status(400).json({ message: "Bad Request. Please fill all field." });

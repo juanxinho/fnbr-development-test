@@ -5,6 +5,7 @@ import languageRoutes from "./routes/cliente.routes";
 
 const app = express();
 
+app.use(require("./middlewares/cors"));
 app.use(express.urlencoded({ extended: false }));
 // Settings
 app.set("port",process.env.NODE_DOCKER_PORT  ||  4000);
