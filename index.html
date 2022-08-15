@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script src="https://kit.fontawesome.com/0854984c4f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-title">
+        <h1>Contact Form</h1>
+    </div>
+
+    <section class="contact" id="contact">
+
+        <form action="form-add.php" method="post" class="formulario" id="formulario">
+            
+
+            <!-- GRUPO NOMBRE -->
+            <div class="formulario__grupo" id="grupo__nombre">
+                <label for="nombre" class="formulario__label">Name</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" class="formulario__input" id="name" name="name" placeholder="Nombres*" >
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 digitos y solo puede contener numeros, letras y guion bajo</p>
+            </div>
+
+            <!-- GRUPO LASTNAME -->
+            <div class="formulario__grupo" id="grupo__nombre">
+                <label for="nombre" class="formulario__label">Last Name</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" class="formulario__input" id="last_name" name="last_name" placeholder="Apellidos*" >
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 digitos y solo puede contener numeros, letras y guion bajo</p>
+            </div>
+
+            <!-- GRUPO CORREO -->
+            <div class="formulario__grupo" id="grupo__correo">
+                <label for="correo" class="formulario__label">Email</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" class="formulario__input" id="email" name="email" placeholder="Email*" >
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                <p class="formulario__input-error">El correo solo puede tener letras, numeros, puntos, guiones, @ y guion bajo.</p>
+            </div>
+
+            <!-- GRUPO TELEFONO -->
+            <div class="formulario__grupo" id="grupo__telefono">
+                <label for="telefono" class="formulario__label">Phone</label>
+                    <div class="formulario_grupo-input">
+                        <input type="text" class="formulario__input" id="phone" name="phone" placeholder="Teléfono*" >
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                <p class="formulario__input-error">El telefono solo puede contener numeros y máximo 10 dígitos</p>
+            </div>
+
+            <!-- GRUPO AREAS -->
+            <div class="formulario__grupo" id="grupo__areas">
+                <label for="areas" class="formulario__label">Areas</label>
+                    <div class="formulario_grupo-input">
+                        <select name="areas" id="areas" class="formulario__input">
+                            <option value="0">Seleccione una opción</option>
+                            
+                        </select>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+            </div>
+
+            <!-- GRUPO PROGRAMS -->
+            <div class="formulario__grupo" id="grupo__telefono">
+                <label for="telefono" class="formulario__label">Programs</label>
+                    <div class="formulario_grupo-input">
+                        <select name="programs" id="programs" class="formulario__input">
+                            <option value="0">Seleccione una opción</option>
+                            
+                        </select>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+            </div>
+
+            <!-- GRUPO COUNTRY -->
+            <div class="formulario__grupo" id="grupo__country">
+                <label for="country" class="formulario__label">Country</label>
+                    <div class="formulario_grupo-input">
+                        <select name="country" id="country" class="formulario__input">
+                            <option value="0">Seleccione una opción</option>
+                            <!--option value="volvo">Colombia</option>
+                            <option value="saab">Ecuador</option>
+                            <option value="mercedes">Perú</option>
+                            <option value="audi">Chile</option-->
+                        </select>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                <p class="formulario__input-error">Debe elegir un pais</p>
+            </div>
+
+            <!-- GRUPO STATE -->
+            <div class="formulario__grupo" id="grupo__state">
+                <label for="state" class="formulario__label">State</label>
+                    <div class="formulario_grupo-input">
+                        <select name="state" id="state" class="formulario__input">
+                            <option value="0">Seleccione una opción</option>
+                            <!--option value="volvo">Guayas</option>
+                            <option value="saab">Pichincha</option>
+                            <option value="mercedes">Esmeraldas</option>
+                            <option value="audi">Manabí</option-->
+                        </select>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                <p class="formulario__input-error">Debe elegir una provincia o estado</p>
+            </div>
+
+            <!-- GRUPO CITY -->
+            <div class="formulario__grupo" id="grupo__city">
+                <label for="city" class="formulario__label">city</label>
+                    <div class="formulario_grupo-input">
+                        <select name="city" id="city" class="formulario__input">
+                            <option value="0">Seleccione una opción</option>
+                            <!--option value="volvo">Guayaquil</option>
+                            <option value="saab">Playas</option>
+                            <option value="mercedes">Daule</option>
+                            <option value="audi">Durán</option-->
+                        </select>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                <p class="formulario__input-error">Debe elegir una ciudad</p>
+            </div>
+
+            <!-- GRUPO MENSAJE -->
+            <div class="formulario__grupo" id="grupo__mensaje">
+                <label for="mensaje" class="formulario__label">Escríbenos</label>
+                    <div class="formulario_grupo-input">
+                        <textarea name="comments" id="comments" class="formulario__textarea" placeholder="Tu mensaje" maxlength="150"></textarea>
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                    </div>
+                <!-- <p class="formulario__input-error">La ciudad solo puede tener letras de la A a la Z y máximo 16 caracteres</p> -->
+            </div>
+
+            <!-- TERMINOS Y CONDICIONES -->
+			<div class="formulario__grupo-terminos" id="grupo__terminos">
+				<label class="formulario__label">
+					<input class="formulario__checkbox" type="checkbox" name="policy_acceptance_check" id="policy_acceptance_check">
+					<span>Acepto los Términos y Condiciones</span>
+				</label>
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fa-solid fa-triangle-exclamation"></i><b>Error: Por favor rellene el formulario correctamente y acepte los términos y condiciones</b></p>
+			</div>
+
+			<div class="formulario__grupo-btn-enviar">
+				<button type="submit" class="formulario__btn" id="btnSend">Enviar</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente</p>
+			</div>
+        </form>
+    </section>
+    <div id="paises"></div>
+
+    <script src="/js/formValidate.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
