@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion Solicitada</title>
+    <style>
+        /* DISEÑO PARA EL INBOX DEL CORREO */
+        body, html {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inbox-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            width: 320px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-left: 50vh;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+        }
+
+        .content {
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 32px;
+            color: #000;
+        }
+		.content .heading {
+    		font-weight: 700;
+    		font-size: 32px;
+   		 	line-height: 1.2;
+  		}
+        .content p {
+            margin: 0 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            color: #e8e8e8;
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            outline: 2px solid #e8e8e8;
+            background: transparent;
+            color: #e8e8e8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inbox-container">
+        <div class="card">
+            <div class="content">
+                <p class="heading">Informacion Solicitada</p>
+                <p>Nombre: [[${contacto.name}]]</p>
+                <p>Apellido: [[${contacto.lastname}]]</p>
+                <p>Pais: [[${contacto.country.name}]]</p>
+                <p>Provincia/Estado: [[${contacto.state.name}]]</p>
+                <p>Ciudad: [[${contacto.city.name}]]</p>
+                <p>Area: [[${contacto.area.name}]]</p>
+                <p>Programa: [[${contacto.programs.name}]]</p>
+                <p>Coments: [[${contacto.comments}]]</p>
+                <a class="btn" href="#">Mas informacion</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

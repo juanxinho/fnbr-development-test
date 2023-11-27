@@ -1,0 +1,122 @@
+<div class="container">
+  <form class="form" [formGroup]= "contactoForm" (ngSubmit)="formSubmit()">
+
+    <div class="title">Request Information</div>
+
+    <div class="registro-flex">
+      <div class="input-container ic2">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" matInput placeholder="Enter your Name" required class="formControl">
+        </mat-form-field>
+      </div>
+
+      <div class="input-container ic2">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Lastname</mat-label>
+          <input formControlName="lastname" matInput placeholder="Enter your Lastname" required class="formControl">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="registro-flex">
+      <div class="input-container ic2">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="pat@example.com" required class="formControl">
+          <mat-error></mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="input-container ic2">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput  formControlName="telefono" placeholder="Enter your phone number" class="formControl">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="registro-flex">
+      <div class="input-container ic2">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Area</mat-label>
+        <mat-select  name="area"  formControlName="area" class="formControl">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let item of area" [value]= "item">{{item.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-container ic2">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Programs</mat-label>
+        <mat-select name="programs"  formControlName="programs">
+          <mat-option *ngFor="let item of programs" [value]= "item">{{item.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    </div>
+    <div class="registro-flex">
+      <div class="input-container ic2">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Country</mat-label>
+        <mat-select name="country"  formControlName="country" >
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let item of country" [value]= "item">{{item.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-container ic2">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>State</mat-label>
+        <mat-select name="state"  formControlName="state" >
+          <mat-option [value]= "item" *ngFor="let item of state" >{{item.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    </div>
+
+    <div class="registro-flex">
+      <div class="input-container ic2">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>City</mat-label>
+          <mat-select name="city" formControlName="city">
+            <mat-option>None</mat-option>
+            <mat-option  [value]= "item" *ngFor="let item of city">{{item.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="input-container ic2">
+        <mat-form-field class="full-width-c" appearance="outline">
+          <mat-label>Coments</mat-label>
+          <textarea formControlName="comments" matInput class="check-ajuste"></textarea>
+        </mat-form-field>
+      </div>
+      </div>
+      <div class="btn-contanier">
+      <mat-checkbox class="checkbox" formControlName="acceptTerms" required >I accept Terms and Conditions</mat-checkbox>
+    <button class="btn-formulario" type="submit">Enviar</button>
+  </div>
+  </form>
+</div>
+
+<!-- <div class="inbox-container">
+<div class="card">
+  <div class="content">
+    <p class="heading">Informacion Solicitada 
+    </p><div class="para">
+      <p>Nombre: </p>
+      <p>Apellido: </p>
+       <p>Pais: </p>
+       <p>Provincia/Estado:</p>
+      <p>Ciudad: </p>
+      <p>Area: </p>
+      <p>Programa: </p>
+      <p>Coments: </p>
+    </div>
+     <button class="btn">Mas informacion</button>
+  </div>
+</div>
+</div> -->

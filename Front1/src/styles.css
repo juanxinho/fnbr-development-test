@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image:url('https://img.freepik.com/fotos-premium/desenfoque-fondo-oficina-moderna-vacia-centro-ciudad-diseno-interior-espacio-trabajo_31965-73058.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+
+}
+
+
