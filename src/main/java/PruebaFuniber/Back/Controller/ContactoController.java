@@ -64,7 +64,7 @@ public class ContactoController {
             thymeleafContext.setVariable("contacto", contacto);
 
             // Procesar el template de Thymeleaf
-            String cuerpoCorreo = templateEngine.process("emailTemplate", thymeleafContext);
+            String cuerpoCorreo = templateEngine.process("emailTemplate.html", thymeleafContext);
 
             // Enviar el correo
             enviarCorreo(contacto.getEmail(), "Asunto del correo", cuerpoCorreo);
