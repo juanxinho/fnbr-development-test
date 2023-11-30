@@ -1,0 +1,140 @@
+
+.blue-frame {
+    background-color: rgb(11, 91, 148);
+    height: 30px; /* Ajusta la altura según tus necesidades */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+}
+.content-container {
+    padding: 30px 50px 0px;
+}
+
+img { 
+    width: 20%;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+  }
+h3 {
+    color: #286aac; 
+    font-family: Helvetica;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    flex:1;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+
+  }
+  .fieldset-container {
+    display: flex;
+    flex-direction: row;
+}
+  
+  fieldset {
+    padding: 10px;
+    margin: 5px;
+    width: 48%; 
+    border: none;
+  }
+
+  
+  
+ 
+  label {
+    font-size: 13px;
+    font-weight: 600; 
+
+  }
+  
+
+ /* ... tu CSS existente ... */
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-container label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+ 
+
+  
+.send-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%; 
+  margin: 0 auto; 
+  border-radius: 5px; 
+  background-color: rgb(11, 91, 148); 
+  color: white; 
+  border: none;
+  padding: 1px;
+  font-size: 13px; 
+}
+
+.send-button p{
+  margin-left: 5px; 
+}
+
+
+select:has(option:disabled:checked[hidden]) {
+  color: gray;
+}
+select option {
+  color: black;
+}
+
+::placeholder {
+  color: gray;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.input-error {
+  border: 1px solid red !important;
+}
