@@ -1,0 +1,22 @@
+# Dependencias
+node_modules/
+
+# Archivos generados
+npm-debug.log
+yarn-error.log
+
+# Archivos temporales
+*.log
+*.swp
+
+# Directorio de construcción
+/build
+
+# Entornos específicos
+.env
+.env.local
+.env.*.local
+
+# Otros
+.DS_Store
+Thumbs.db
