@@ -1,19 +1,7 @@
 # fnbr-frontend
 
-## Project setup
+## Notas
 ```
-npm install
+Al momento de correr la app, usar el link: 
+    - Network: http://172.30.0.3:8080/
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
