@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production-base
+    working_dir: /app
+    container_name: frontend-funiber
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    # volumes:
+    #   - ./:/app
+    ports:
+      - "${APP_PORT:-8081}:8080"
+    networks:
+      - shared-funiber
+    command:
+      - "/bin/sh" 
+      - '-c' 
+      - "npm run serve"
+
+networks:
+  shared-funiber:
+    external: true
